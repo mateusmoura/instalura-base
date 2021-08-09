@@ -41,6 +41,8 @@ const colors = {
 
 const theme = {
   colors,
+  borderRadius: '12px',
+  transition: '200ms ease-in-out',
 };
 
 export default theme;
