@@ -27,7 +27,7 @@ const Menu = () => (
 
     <MenuWrapper.CentralSide>
       { links.map(link => (
-        <li>
+        <li key={link.url}>
           <a href={link.url}>{link.texto}</a>
         </li>
       )) }
