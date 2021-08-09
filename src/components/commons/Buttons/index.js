@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 
+import { TextStyleVariants } from '../../foundation/Text';
+
 const ButtonGhost = css`
   background: transparent;
   color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
@@ -19,15 +21,21 @@ const Button = styled.button`
   font-weight: bold;
   padding: 12px 26px;
   border-radius: 8px;
-  ${(props) =>
+
+  // Define typograph
+  ${TextStyleVariants({ variant: 'smallestException' })}
+
+  ${({ ghost }) =>
   {
-    if (props.ghost) {
+    if (ghost) {
       return ButtonGhost;
     }
     return ButtonDefault
   }}
+
   transition: opacity ${({ theme }) => theme.transition};
   border-radius: ${({ theme }) => theme.borderRadius};
+
   &:hover,
   &:focus {
     opacity: .5;
