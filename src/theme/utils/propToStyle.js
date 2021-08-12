@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import { isObject, mapValues, map } from 'lodash';
-import { breakpointMedia } from './breakpointMedia';
+import { breakpointsMedia } from './breakpointsMedia';
 
 const propToStyle = (propName) => (props) =>
 {
@@ -8,7 +8,7 @@ const propToStyle = (propName) => (props) =>
 
   if (isObject(propValue)) {
     return css`
-      ${breakpointMedia({
+      ${breakpointsMedia({
       ...mapValues(propValue, cssElement => ({
         [propName]: cssElement,
       }))

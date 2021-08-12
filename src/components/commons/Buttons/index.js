@@ -3,7 +3,7 @@ import get from 'lodash/get';
 
 import { TextStyleVariants } from '../../foundation/Text';
 import propToStyle from '../../../theme/utils/propToStyle';
-import { breakpointMedia } from '../../../theme/utils/breakpointMedia';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 const ButtonGhost = css`
   background: transparent;
@@ -43,7 +43,7 @@ const Button = styled.button`
     opacity: .5;
   }
 
-  ${breakpointMedia({
+  ${breakpointsMedia({
     xs: css`
       ${TextStyleVariants({ variant: 'smallestException' })}
     `,

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { TextStyleVariants } from '../../../foundation/Text';
-import { breakpointMedia } from '../../../../theme/utils/breakpointMedia';
+import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 
 const MenuWrapper = styled.nav`
   display: flex;
@@ -13,7 +13,7 @@ const MenuWrapper = styled.nav`
   justify-content: space-between;
   font-family: 'Rubik', sans-serif;
 
-  ${breakpointMedia({
+  ${breakpointsMedia({
     md: css`
       width: 100%;
       padding: 0 16px;
@@ -37,7 +37,7 @@ MenuWrapper.LeftSide = styled.div`
   margin: 0;
   padding: 0;
 
-  ${breakpointMedia({
+  ${breakpointsMedia({
     md: css`
       width: 131px;
       height: 32px;
@@ -61,7 +61,7 @@ MenuWrapper.CentralSide = styled.ul`
   justify-content: space-between;
   border-bottom: 1px solid #99989E;
 
-  ${breakpointMedia({
+  ${breakpointsMedia({
     md: css`
       flex: 1;
       border: none;
@@ -87,7 +87,7 @@ MenuWrapper.CentralSide = styled.ul`
       color: #070C0E;
     }
 
-    ${breakpointMedia({
+    ${breakpointsMedia({
       xs: css`
         ${TextStyleVariants({ variant: 'smallestException' })}
       `,
@@ -106,7 +106,7 @@ MenuWrapper.RightSide = styled.div`
   display: flex;
   justify-content: flex-end;
 
-  ${breakpointMedia({
+  ${breakpointsMedia({
     md: css`
       order: initial;
     `
