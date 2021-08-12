@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 
 import { TextStyleVariants } from '../../foundation/Text';
+import { breakpointMedia } from '../../../theme/utils/breakpointMedia';
 
 const ButtonGhost = css`
   background: transparent;
@@ -40,6 +41,15 @@ const Button = styled.button`
   &:focus {
     opacity: .5;
   }
+
+  ${breakpointMedia({
+    xs: css`
+      ${TextStyleVariants({ variant: 'smallestException' })}
+    `,
+    md: css`
+      ${() => TextStyleVariants({ variant: 'paragraph1' })}
+    `
+  })}
 `;
 
 export default Button;

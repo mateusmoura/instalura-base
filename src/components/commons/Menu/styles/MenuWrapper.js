@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 const MenuWrapper = styled.nav`
-  font-family: 'Rubik', sans-serif;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 18px;
   padding-left: 28px;
+  align-items: center;
   padding-right: 28px;
+  justify-content: space-between;
+  font-family: 'Rubik', sans-serif;
 `;
 
 MenuWrapper.LeftSide = styled.div`
-  padding: 0;
-  margin: 0;
   order: 1;
+  margin: 0;
+  padding: 0;
 `;
 
 MenuWrapper.CentralSide = styled.ul`
@@ -22,21 +22,22 @@ MenuWrapper.CentralSide = styled.ul`
   margin: 0;
   order: 3;
   width: 100%;
-  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 17px;
-  border-top: 1px solid #88989E;
-  border-bottom: 1px solid #99989E;
   padding: 12px;
+  list-style: none;
+  margin-top: 17px;
+  align-items: center;
+  border-top: 1px solid #88989E;
+  justify-content: space-between;
+  border-bottom: 1px solid #99989E;
 
   a {
-    text-align: center;
     display: block;
-    text-decoration: nome;
     color: #88989E;
+    text-align: center;
+    text-decoration: none;
     transition: 200ms ease-in-out;
+
     &:hover,
     &:focus {
       font-weight: 500;
@@ -46,11 +47,11 @@ MenuWrapper.CentralSide = styled.ul`
 `;
 
 MenuWrapper.RightSide = styled.div`
-  padding: 0;
-  margin: 0;
-  display: flex;
   flex: 1;
   order: 2;
+  margin: 0;
+  padding: 0;
+  display: flex;
   justify-content: flex-end;
 `;
 

@@ -5,13 +5,11 @@ import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 
 export const TextStyleVariants = ({ variant } = {}) => css`
-  ${() => (
-    css`
-      font-size: ${({ theme }) => get(theme.typographyVariants, `${variant}.fontSize`)};
-      font-weight: ${({ theme }) => get(theme.typographyVariants, `${variant}.fontWeight`)};
-      line-height: ${({ theme }) => get(theme.typographyVariants, `${variant}.lineHeight`)};
-    `
-  )}
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants[variant].fontSize};
+    font-weight: ${theme.typographyVariants[variant].fontWeight};
+    line-height: ${theme.typographyVariants[variant].lineHeight};
+  `}
 `;
 
 export const TextBase = styled.span`
