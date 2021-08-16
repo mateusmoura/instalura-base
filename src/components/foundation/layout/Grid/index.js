@@ -1,7 +1,8 @@
-import styled, { css } from 'styled-components';
-import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
-
 import { isNumber } from 'lodash';
+import styled, { css } from 'styled-components';
+
+import propToStyle from '../../../../theme/utils/propToStyle';
+import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 
 const Container = styled.div`
   width: 100%;
@@ -56,31 +57,31 @@ const Col = styled.div`
     }
     return breakpointsMedia({
       ...(value.xs && {
-          xs: css`
+        xs: css`
             flex: 0 0 ${(100 * value.xs) / 12}%;
             max-width: ${(100 * value.xs) / 12}%;
           `,
-        }),
+      }),
       ...(value.sm && {
-          sm: css`
+        sm: css`
             flex: 0 0 ${(100 * value.sm) / 12}%;
             max-width: ${(100 * value.sm) / 12}%;
           `,
       }),
       ...(value.md && {
-          md: css`
+        md: css`
             flex: 0 0 ${(100 * value.md) / 12}%;
             max-width: ${(100 * value.md) / 12}%;
           `,
       }),
       ...(value.lg && {
-          lg: css`
+        lg: css`
             flex: 0 0 ${(100 * value.lg) / 12}%;
             max-width: ${(100 * value.lg) / 12}%;
           `,
       }),
       ...(value.xl && {
-          xl: css`
+        xl: css`
             flex: 0 0 ${(100 * value.xl) / 12}%;
             max-width: ${(100 * value.xl) / 12}%;
           `,
@@ -89,47 +90,52 @@ const Col = styled.div`
   }}
 
   ${({ offset }) => {
-    if (!offset) return;
-
     if (isNumber(offset)) {
       return css`
       margin-left: ${(100 * offset) / 12}%;
     `;
     }
     return breakpointsMedia({
-      ...(offset.xs && {
+      ...(offset?.xs && {
         xs: css`
       margin-left: ${(100 * offset.xs) / 12}%;
     `,
       }),
-      ...(offset.sm && {
+      ...(offset?.sm && {
         sm: css`
       margin-left: ${(100 * offset.sm) / 12}%;
     `,
       }),
-      ...(offset.md && {
+      ...(offset?.md && {
         md: css`
       margin-left: ${(100 * offset.md) / 12}%;
     `,
       }),
-      ...(offset.lg && {
+      ...(offset?.lg && {
         lg: css`
       margin-left: ${(100 * offset.lg) / 12}%;
     `,
       }),
-      ...(offset.xl && {
+      ...(offset?.xl && {
         xl: css`
       margin-left: ${(100 * offset.xl) / 12}%;
     `,
       }),
     });
   }}
+
+  ${propToStyle('margin')}
+  ${propToStyle('display')}
+  ${propToStyle('marginTop')}
+  ${propToStyle('alignItems')}
+  ${propToStyle('flexDirection')}
+  ${propToStyle('justifyContent')}
 `;
 
 const Grid = {
   Container,
   Row,
   Col,
-}
+};
 
 export default Grid;

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
@@ -16,14 +17,18 @@ export const TextStyleVariants = ({ variant } = {}) => css`
 export const TextBase = styled.span`
   ${({ variant }) => TextStyleVariants({ variant })}
 
-  ${propToStyle('textAlign')}
-  ${propToStyle('marginBottom')}
   ${propToStyle('margin')}
+  ${propToStyle('textAlign')}
+  ${propToStyle('marginTop')}
+  ${propToStyle('marginLeft')}
+  ${propToStyle('marginBottom')}
 
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
 `;
 
-const Text = ({ tag, variant, children, ...props }) => (
+const Text = ({
+  tag, variant, children, ...props
+}) => (
   <TextBase as={tag} variant={variant} {...props}>
     {children}
   </TextBase>
@@ -32,7 +37,8 @@ const Text = ({ tag, variant, children, ...props }) => (
 Text.propTypes = {
   tag: PropTypes.string,
   variant: PropTypes.string,
-}
+  children: PropTypes.element.isRequired,
+};
 
 Text.defaultProps = {
   tag: 'span',

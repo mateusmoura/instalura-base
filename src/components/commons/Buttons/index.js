@@ -21,18 +21,17 @@ const Button = styled.button`
   opacity: 1;
   cursor: pointer;
   font-weight: bold;
-  padding: 12px 26px;
+  padding: 12px 40px;
   border-radius: 8px;
 
   // Define typograph
   ${TextStyleVariants({ variant: 'smallestException' })}
 
-  ${({ ghost }) =>
-  {
+  ${({ ghost }) => {
     if (ghost) {
       return ButtonGhost;
     }
-    return ButtonDefault
+    return ButtonDefault;
   }}
 
   transition: opacity ${({ theme }) => theme.transition};
@@ -49,7 +48,7 @@ const Button = styled.button`
     `,
     md: css`
       ${() => TextStyleVariants({ variant: 'paragraph1' })}
-    `
+    `,
   })}
 
   ${propToStyle('margin')}

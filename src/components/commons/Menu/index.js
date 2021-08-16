@@ -29,7 +29,7 @@ const Menu = () => (
     </MenuWrapper.LeftSide>
 
     <MenuWrapper.CentralSide>
-      {links.map(link => (
+      {links.map((link) => (
         <li key={link.url}>
           <Text tag="a" variant="smallestException" href={link.url}>{link.texto}</Text>
         </li>

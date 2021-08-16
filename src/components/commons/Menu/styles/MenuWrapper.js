@@ -28,7 +28,7 @@ const MenuWrapper = styled.nav`
     `,
     xl: css`
       max-width: 1222px;
-    `
+    `,
   })}
 `;
 
@@ -43,7 +43,7 @@ MenuWrapper.LeftSide = styled.div`
       height: 32px;
       order: initial;
       padding-right: 16px;
-    `
+    `,
   })}
 `;
 
@@ -71,7 +71,7 @@ MenuWrapper.CentralSide = styled.ul`
       padding-bottom: 0;
       margin-left: 28px;
       justify-content: space-between;
-    `
+    `,
   })}
 
   a {
@@ -88,13 +88,13 @@ MenuWrapper.CentralSide = styled.ul`
     }
 
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         ${TextStyleVariants({ variant: 'smallestException' })}
       `,
-      md: css`
+    md: css`
         ${TextStyleVariants({ variant: 'paragraph1' })}
-      `
-    })}
+      `,
+  })}
   }
 `;
 
@@ -109,7 +109,7 @@ MenuWrapper.RightSide = styled.div`
   ${breakpointsMedia({
     md: css`
       order: initial;
-    `
+    `,
   })}
 `;
 

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
-  padding: 14px;
+  padding: 0 14px;
   display: flex;
   border-radius: 4px;
   padding-left: 28px;
   align-items: center;
   padding-right: 28px;
+  margin-bottom: 34px;
   justify-content: center;
 
   img {

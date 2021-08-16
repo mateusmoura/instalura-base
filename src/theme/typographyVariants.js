@@ -1,4 +1,4 @@
-export const typographyVariants = {
+const typographyVariants = {
   // [title]
   title: {
     fontSize: '32px',
